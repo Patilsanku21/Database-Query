@@ -1,0 +1,24 @@
+create Table :
+
+create table Userlogin1(Username nvarchar(20)Not Null,Password nvarchar(8) Not Null);
+
+select :
+
+Select * from userlogin1;
+
+Insert :
+
+insert into userlogin1(username ,password)values('staff','s123');
+
+insert into userlogin1(username ,password)values('Account','A1');
+
+insert into userlogin1(username ,password)values('Manager','M1234');
+
+insert into userlogin1(username ,password)values('ACManager','AM12');
+
+insert into userlogin1(username ,password)values('peon','p12');
+
+Select :
+
+select * from userlogin1;
+
