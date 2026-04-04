@@ -26,7 +26,7 @@ MAX salary :
 select * from employee where salary > 10000;
 
 MIN Salary :
-select * from employee where salary > 10000;
+select * from employee where salary < 10000;
 
 NOT EQUAL :
 
