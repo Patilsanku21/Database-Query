@@ -1,0 +1,101 @@
+create table:
+
+create table employee(emp_Id int Not Null,Name varchar(10) Not Null,Qualification nvarchar(40) Not Null,salary int Not Null,city varchar(20));
+
+select :
+
+select * from employee;
+
+Insert :
+
+insert into employee(emp_Id,Name,Qualification,salary,city)values(1,'Harry','BBA',10000,'Karad');
+
+insert into employee(emp_Id,Name,Qualification,salary,city)values(2,'Nititn','MCA',25000,'Pune');
+
+insert into employee(emp_Id,Name,Qualification,salary,city)values(3,'Neeta','MCom',30000,'Satara');
+
+insert into employee(emp_Id,Name,Qualification,salary,city)values(4,'Anisha','BSC',40000,'Kolhapur');
+
+
+select :
+
+select * from employee;
+
+MAX salary :
+
+select * from employee where salary > 10000;
+
+MIN Salary :
+select * from employee where salary > 10000;
+
+NOT EQUAL :
+
+select * from employee where salary != 25000;
+
+EQUAL :
+
+select * from employee where salary = 25000;
+
+MAX Salary :
+
+select * from employee where salary =(select Max(salary)from employee);
+
+MIN salary :
+
+select * from employee where salary =(select Min(salary)from employee);
+
+Between :
+
+select * from employee where salary between 40000 and 10000;
+
+
+select * from employee where salary >30000 and salary < 40000;
+
+select * form employee;
+
+select Name from employee;
+
+select city from employee;
+
+select Name,Qualification city from employee;
+
+select Max(salary)from employee;
+
+select Min(salary)from employee;
+
+select Avg(salary)from employee;
+
+select Sum(salary)from employee;
+
+select count(*)from employee;
+
+select count(city)from employee;
+
+select count(Name)from employee;
+
+select * from employee;
+
+select * from employee order by emp_Id ASC;
+
+select * from employee order by emp_Id DESC;
+
+select * from employee where Name ='Harry';
+
+select * from employee where Name Like '%H';
+
+select *  from employee where Name Like 'Ha%';
+
+select * from employee where Name Like '%tn';
+
+select * from employee;
+
+select * from employee city like '%p';
+
+select * from employee name like '%N';
+
+
+
+
+
+
+
