@@ -1,0 +1,78 @@
+create Table :
+
+	create table Department(D_Id int Not Null,Name varchar(10) Not Null,Qualification nvarchar(20) Not Null,salary Money Not Null);
+
+Select :
+
+	select * from Department;
+
+Insert:
+
+	insert into Department(D_Id,Name,Qualification,salary)values(1,'Harry','MCA',25000);
+	insert into Department(D_Id,Name,Qualification,salary)values(2,'Nitin','IT',30000);
+	insert into Department(D_Id,Name,Qualification,salary)values(3,'Menna','HR',45000);
+	insert into Department(D_Id,Name,Qualification,salary)values(4,'Priya','MCA',55000);
+	insert into Department(D_Id,Name,Qualification,salary)values(5,'Ketaki','BCS',40000);
+Select :
+
+	select * From Department ;
+Select Query:
+
+	select * from Department where salary > 30000;
+	select * from Department where salary < 30000;
+	select * from Department where salary != 40000;
+	select * from Department where salary = 45000;
+	select * from Department where salary Between 30000 and 40000;
+	select * from Department where salary > 550000 and salary < 25000;
+	select Max(salary)from Department;
+	select Min(salary)from Department;
+	select count(*)from Department;
+	select Sum(salary)from Department;
+	select Sum(D_Id)from Department;
+	select Avg(D_Id)from Department;
+	select Avg(salary)from Department;
+	select count(Qualification)from Department;
+	select * from Department;
+order By:
+	select * from Department order by D_Id ASC;
+	select * from Department order by D_Id DESC;
+	select * from Department order by Name DESC;
+	select * from Department order by Name ASC;
+	select * from Department where Name = 'Harry';
+	select * from Department where Name like 'H%';
+	select * from Department where Name like '%nna';
+Alter :
+
+	Alter table Department ADD Email_Id Bit Null;
+	select * from Department;
+	
+	Alter table Department Drop Column Email_Id ;
+	select * from Department;
+	
+	Alter table Department ADD Mobile_No int Null;
+	
+Update :
+	update Department Set Name = 'Ketan'where D_Id = 3;
+	select * from Department;
+	
+	update Department set Qualification ='BCA'where D_Id = 5;
+	select * from Department;
+	
+	update Department set salary ='35000'where D_Id = 1;
+	select * from Department;
+	
+	update Department set salary += 35000;
+	select * from Department;
+
+	update Department set salary -= 35000;
+	select * from Department;
+	
+	update Department set salary += 35000 where Qualification = 'MCA';
+	select * from Department;
+
+	update Department set salary -= 35000 where Qualification = 'MCA';
+	select * from Department;
+
+	
+	
+ 
