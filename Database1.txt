@@ -1,0 +1,148 @@
+create table studentss(S_id int primary key Not Null,name varchar(10),Age int,salary money);
+
+create table Addmission_Detailss123( prn_No  int primary key Not Null, name varchar (10),cource varchar(20),fee Money ,S_id int ,foreign key (S_id) references  students (S_id));
+
+create table Marks_List(percentage int Not Null,Total int Not Null,Greade varchar(15),prn_No  int,foreign key(prn_No) references Addmission_Details(prn_No)); 
+
+insert into studentss(S_id,name,Age,salary)values(1,'Harry',15,2000);
+
+insert into studentss(S_id,name,Age,salary)values(2,'Riya',18,3000);
+
+insert into studentss(S_id,name,Age,salary)values(3,'Netta',20,4000);
+
+insert into studentss(S_id,name,Age,salary)values(4,'Anita',21,5000);
+
+insert into studentss(S_id,name,Age,salary)values(5,'Sani',22,6000);
+
+select * From Studentss;
+
+insert into Addmission_Detailss123(prn_No,cource,fee,S_id)values(1,'BCA',15000,1);
+
+insert into Addmission_Detailss123(prn_No,cource,fee,S_id)values(2,'MCA',18000,2);
+
+insert into Addmission_Detailss123(prn_No,cource,fee,S_id)values(3,'BBA',20000,3);
+
+insert into Addmission_Detailss123(prn_No,cource,fee,S_id)values(4,'MCOM',21000,4);
+
+insert into Addmission_Detailss123(prn_No,cource,fee,S_id)values(5,'DS',22000,5);
+
+select * From Addmission_Detailss123
+select * from employee;
+
+select * from students where salary > 21000;
+
+select * from students where salary != 21000;
+
+select * from students where salary =(select Max(salary)from students);
+
+select * from students where salary =(select Min(salary)from students);
+
+select * from students;
+
+select * from students where salary between 21000 and 18000;
+
+select Max(salary)from students;
+
+select Min(salary)from students;
+
+select Avg(salary)from students;
+
+select Sum(salary)from students;
+
+select count(*)from students;
+
+select count(Name)from students;
+
+select * from students;
+
+select * from students order by S_Id ASC;
+
+select * from students order by S_Id DESC;
+
+select * from  students where Name ='Harry';
+
+select * from students where Name Like '%H';
+
+select *  from students where Name Like 'Ha%';
+
+select * from students;
+
+select S_id,name,Age, salary from students where S_id = 3;
+
+Alter table students ADD Email_Id Bit Null;
+	
+Alter table students ADD Mobile_No int Null;
+	
+update students Set Name = 'Harry'where S_Id = 3;
+	
+	
+update students set Age ='21'where S_Id = 5;
+	
+	
+update students set salary ='35000'where S_Id = 1;
+	
+select * from students ;
+	
+select * from students where Age > (select Avg(Age) from students);
+
+select * from Students
+inner join Addmission_Details on students.S_id = Addmission_Details.S_id;
+
+select students.s_id,students.name,Addmission_Detailss123 cource from students
+left outer join Addmission_Detailss123 on students.S_id = Addmission_Detailss123.S_id;
+
+select students.s_id,students.name,Addmission_Details12 cource from students
+Right outer join Addmission_Details12 on students.S_id = Addmission_Details12.S_id where students.age > 15;
+
+select students.s_id,students.name,Addmission_Details12 cource from students
+full outer join Addmission_Details12 on students.S_id = Addmission_Details12.S_id where students.age > 15;
+
+select students.name,Addmission_Detailss123.cource 
+from students cross join Addmission_Detailss123; 
+
+create procedure s_students
+AS
+BEGIN
+select * from students ;
+END;
+
+
+ create procedure sp_Addmission_Details
+ As
+ BEGIN
+ select * from Addmission_Details;
+ END;
+  
+
+create procedure sp_studdents_information_by_S_id
+@S_id int = 1
+AS
+BEGIN
+select S_id,name,Age, salary from students where S_id = @S_id;
+END;
+
+create procedure sp_students_information_salary_Range
+@start money,
+@END money
+AS
+BEGIN
+select * from students where salary between @start and @END;
+
+END;
+
+
+Exec sp_students;
+
+ Exec sp_Addmission Details;
+
+ Exec sp_studdents_information_by_S_id @S_id = 1;
+
+ Exec  sp_students_information_salary ;
+
+ Exec sp_students_information_salary_Range 18000,21000;
+
+ Exec sp_students_information_salary_Range @start = 18000,@END = 21000;
+
+
+ 
+ 
